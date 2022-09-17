@@ -10,6 +10,9 @@ import UIKit
 
 class MainContentViewController: UIViewController {
     
+    let diceImagesArray = ["DiceOne", "DiceTwo", "DiceThree", "DiceFour","DiceFive", "DiceSix"]
+    
+    
     let contentView: UIView = {
         let view = UIView()
         

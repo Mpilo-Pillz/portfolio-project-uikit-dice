@@ -10,6 +10,8 @@ import UIKit
 
 extension MainContentViewController {
     
+    
+    
     func setUpContentView() {
         
         setUpContentViewConstraints()
@@ -136,7 +138,9 @@ extension MainContentViewController {
         }
     
     @objc func rollButtonPressed(sender: UIButton) {
-        print("Time to and func")
+        
+        diceTwoImageView.image = UIImage(named: diceImagesArray[Int.random(in: 0...5)])
+        diceOneImageView.image = UIImage(named: diceImagesArray[Int.random(in: 0...5)])
     }
 
 }
