@@ -39,6 +39,12 @@ class MainContentViewController: UIViewController {
         
         return diceTwoImage
     }()
+    
+    let rollDiceButton: UIButton = {
+        let rollDiceButton = UIButton(type: .system)
+        
+        return rollDiceButton
+    }()
         
     override func viewDidLoad() {
         super.viewDidLoad()

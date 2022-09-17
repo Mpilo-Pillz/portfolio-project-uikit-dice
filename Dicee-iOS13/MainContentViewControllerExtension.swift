@@ -17,12 +17,14 @@ extension MainContentViewController {
         setUpLogoImageConstraints()
         setUpDiceOneImageConstraints()
         setUpDiceTwoImageConstraints()
+        setUpRollDiceButtonConstraints()
         
         configureBackgroundImage()
         
         setUpLogoImage()
         setUpDiceImageOne()
         setUpDiceImageTwo()
+        setUpRollDiceButton()
         
     }
     
@@ -55,6 +57,19 @@ extension MainContentViewController {
         
         diceTwoImageView.image = UIImage(named: "DiceFour")
     }
+    
+    func setUpRollDiceButton() {
+        rollDiceButton.setTitle("Roll", for: .normal)
+        rollDiceButton.addTarget(self, action: #selector(rollButtonPressed), for: UIControl.Event.touchUpInside)
+        
+        rollDiceButton.backgroundColor = .white
+        rollDiceButton.layer.cornerRadius = 10
+        rollDiceButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: CGFloat(20))
+        
+//        rollDiceButton.frame.size.width = 300
+//        rollDiceButton.frame.size.height = 300
+        
+    }
 
     func setUpBackGroundImageContraints() {
 
@@ -66,6 +81,7 @@ extension MainContentViewController {
         backgroundImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
 
     }
+    
     
     func setUpLogoImageConstraints() {
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -91,13 +107,24 @@ extension MainContentViewController {
         
     }
     
+    func setUpRollDiceButtonConstraints() {
+        rollDiceButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        rollDiceButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        rollDiceButton.topAnchor.constraint(equalTo: diceTwoImageView.bottomAnchor, constant: 50).isActive = true
+        rollDiceButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 50).isActive = true
+        rollDiceButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -50).isActive = true
+        
+    }
+    
     func setUpContentViewConstraints() {
             view.addSubview(contentView)
 
             contentView.addSubview(backgroundImageView)
             contentView.addSubview(logoImageView)
             contentView.addSubview(diceOneImageView)
-        contentView.addSubview(diceTwoImageView)
+            contentView.addSubview(diceTwoImageView)
+            contentView.addSubview(rollDiceButton)
         
             contentView.translatesAutoresizingMaskIntoConstraints = false
             
@@ -107,5 +134,9 @@ extension MainContentViewController {
             contentView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
             contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         }
+    
+    @objc func rollButtonPressed(sender: UIButton) {
+        print("Time to and func")
+    }
 
 }
