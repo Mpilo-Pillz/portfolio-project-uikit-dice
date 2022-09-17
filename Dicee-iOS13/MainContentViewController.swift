@@ -33,6 +33,12 @@ class MainContentViewController: UIViewController {
         
         return diceOneImage
     }()
+    
+    let diceTwoImageView: UIImageView = {
+        let diceTwoImage = UIImageView()
+        
+        return diceTwoImage
+    }()
         
     override func viewDidLoad() {
         super.viewDidLoad()

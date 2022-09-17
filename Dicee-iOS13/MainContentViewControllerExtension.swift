@@ -16,9 +16,13 @@ extension MainContentViewController {
         setUpBackGroundImageContraints()
         setUpLogoImageConstraints()
         setUpDiceOneImageConstraints()
+        setUpDiceTwoImageConstraints()
+        
         configureBackgroundImage()
+        
         setUpLogoImage()
         setUpDiceImageOne()
+        setUpDiceImageTwo()
         
     }
     
@@ -45,6 +49,12 @@ extension MainContentViewController {
         
         diceOneImageView.image = UIImage(named: "DiceThree")
     }
+    
+    func setUpDiceImageTwo() {
+        diceTwoImageView.contentMode = UIImageView.ContentMode.scaleAspectFit
+        
+        diceTwoImageView.image = UIImage(named: "DiceFour")
+    }
 
     func setUpBackGroundImageContraints() {
 
@@ -54,7 +64,6 @@ extension MainContentViewController {
         backgroundImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         backgroundImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         backgroundImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-
 
     }
     
@@ -70,8 +79,16 @@ extension MainContentViewController {
         diceOneImageView.translatesAutoresizingMaskIntoConstraints = false
         
         diceOneImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 50).isActive = true
-//        diceOneImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 20).isActive = true
+
         diceOneImageView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 70).isActive = true
+    }
+    
+    func setUpDiceTwoImageConstraints() {
+        diceTwoImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        diceTwoImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -50).isActive = true
+        diceTwoImageView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 70).isActive = true
+        
     }
     
     func setUpContentViewConstraints() {
@@ -80,6 +97,7 @@ extension MainContentViewController {
             contentView.addSubview(backgroundImageView)
             contentView.addSubview(logoImageView)
             contentView.addSubview(diceOneImageView)
+        contentView.addSubview(diceTwoImageView)
         
             contentView.translatesAutoresizingMaskIntoConstraints = false
             
