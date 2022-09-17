@@ -14,26 +14,31 @@ extension MainContentViewController {
         
         setUpContentViewConstraints()
         setUpBackGroundImageContraints()
+        setUpLogoImageConstraints()
         configureBackgroundImage()
+        setUpLogoImage()
     }
     
     func configureBackgroundImage() {
         
         backgroundImageView.contentMode = UIView.ContentMode.scaleToFill
-//        backgroundImageView.frame.size.width = 200
-//        backgroundImageView.frame.size.height = 200
-//        backgroundImageView.frame.size.height = 200
-//        backgroundImageView.center = self.view.center
-        
         backgroundImageView.image = UIImage(named: "GreenBackground")
         
-//        contentView.addSubview(backgroundImageView)
+    }
+    
+    func setUpLogoImage() {
+        logoImageView.contentMode = UIImageView.ContentMode.scaleAspectFit
+        logoImageView.frame.size.width = 600
+        logoImageView.frame.size.height = 600
+        
+        logoImageView.image = UIImage(named: "DiceeLogo")
+        
     }
 
     func setUpBackGroundImageContraints() {
-//        backgroundImageView.backgroundColor = .green
+
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-//        backgroundImageView.heightAnchor.constraint(equalToConstant: contentView.frame.height).isActive = true
+
         backgroundImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         backgroundImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         backgroundImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
@@ -42,10 +47,18 @@ extension MainContentViewController {
 
     }
     
+    func setUpLogoImageConstraints() {
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        logoImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        logoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 200).isActive = true
+//        logoImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+    }
+    
     func setUpContentViewConstraints() {
             view.addSubview(contentView)
 
             contentView.addSubview(backgroundImageView)
+        contentView.addSubview(logoImageView)
             contentView.translatesAutoresizingMaskIntoConstraints = false
             
             contentView.heightAnchor.constraint(equalToConstant: view.frame.height).isActive = true

@@ -16,13 +16,17 @@ class MainContentViewController: UIViewController {
         return view
     }()
     
-//    let backgroundImage = UIImage(named: "GreenBackground")
-    
     let backgroundImageView: UIImageView = {
         let backgroundImage = UIImageView()
         
         return backgroundImage
     } ()
+    
+    let logoImageView: UIImageView = {
+        let logoImage = UIImageView()
+        
+        return logoImage
+    }()
         
     override func viewDidLoad() {
         super.viewDidLoad()
