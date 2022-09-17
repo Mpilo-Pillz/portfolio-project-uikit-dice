@@ -27,6 +27,12 @@ class MainContentViewController: UIViewController {
         
         return logoImage
     }()
+    
+    let diceOneImageView: UIImageView = {
+        let diceOneImage = UIImageView()
+        
+        return diceOneImage
+    }()
         
     override func viewDidLoad() {
         super.viewDidLoad()
