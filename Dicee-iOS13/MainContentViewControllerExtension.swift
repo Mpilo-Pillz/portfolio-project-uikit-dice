@@ -51,13 +51,13 @@ extension MainContentViewController {
         diceOneImageView.frame.size.width = 120
         diceOneImageView.frame.size.height = 120
         
-        diceOneImageView.image = UIImage(named: "DiceThree")
+        diceOneImageView.image = UIImage(named: diceImagesArray[Int.random(in: 0...5)])
     }
     
     func setUpDiceImageTwo() {
         diceTwoImageView.contentMode = UIImageView.ContentMode.scaleAspectFit
         
-        diceTwoImageView.image = UIImage(named: "DiceFour")
+        diceTwoImageView.image = UIImage(named: diceImagesArray[Int.random(in: 0...5)])
     }
     
     func setUpRollDiceButton() {
